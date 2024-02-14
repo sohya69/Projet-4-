@@ -42,7 +42,44 @@ h3 {
 }
 
 /****** Homepage ***********/
+/****** Loader ***********/
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background: linear-gradient(to right, #9356DC, #99E2D0);
+  width: 100%;
+  height: 100%;
+  animation: disappearance 0.5s ease-out 1.5s both;
+}
+.loader .loader__logo {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  animation: magnification 1s cubic-bezier(0.645, 0.045, 0.355, 1) both;
+}
+@keyframes magnification {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
+@keyframes disappearance {
+  0% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 0;
+    z-index: -3;
+  }
+}
 /****** Header ***********/
 .logo {
   font-size: 30px;
@@ -105,7 +142,7 @@ h3 {
 }
 @media (min-width: 1024px) {
   .explorerestaurants p {
-    margin: 48px 0 20px 0;
+    margin: 20px 0 20px 0;
   }
 }
 
@@ -150,8 +187,13 @@ h3 {
 }
 @media (min-width: 768px) {
   .fonctionnement h2 {
-    margin: 48px 0 20px 120px;
+    margin: 48px 0 20px 60px;
     padding-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement h2 {
+    margin: 48px 0 20px 120px;
   }
 }
 .fonctionnement__card {
@@ -169,7 +211,8 @@ h3 {
 }
 @media (min-width: 1024px) {
   .fonctionnement__card {
-    margin-left: 120px;
+    margin-left: 140px;
+    justify-content: normal;
   }
 }
 .fonctionnement__card--unit {
